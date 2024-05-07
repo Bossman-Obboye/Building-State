@@ -1,0 +1,30 @@
+name: building
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.3.1 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^6.1.2
+
+
+dev_dependencies:
+  flutter_lints: ^3.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/img/
+    - assets/data/file1.json
+    - assets/data/file2.json
+    - assets/data/file3.json
+    - assets/data/file4.json
+    - assets/data/file5.json

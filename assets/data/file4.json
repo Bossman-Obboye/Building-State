@@ -1,0 +1,107 @@
+{
+   
+    "items": [
+        {
+            "image": "assets/images/luxury_shoe.png",
+            "name": "Luxury Shoe",
+            "price": 45.0,
+            "description": "Introducing the ultimate fusion of fashion and function: our brand new Luxury Shoe. Crafted with meticulous attention to detail and engineered for unparalleled comfort, these shoes are a must-have addition to your footwear collection."
+        },
+        {
+            "image": "assets/images/bluebag-removebg-preview.png",
+            "name": "Gucci Bag",
+            "price": 58.0,
+            "description": "Carry your essentials in timeless elegance with the Gucci Bag. Ideal for work or play, this versatile bag seamlessly transitions from day to night."
+        },
+        {
+            "image": "assets/images/Puma_cropped.png",
+            "name": "Puma Snicker",
+            "price": 98.0,
+            "description": " Our Puma Snicker boast a sleek and modern design that effortlessly elevates any outfit. Whether you're dressing up for a night out or keeping it casual during the day, these shoes will be your go-to accessory for adding a touch of sophistication to your look."
+        },
+        {
+            "image": "assets/images/leatherbag.png",
+            "name": "Leather bag",
+            "price": 135.0,
+            "description": "Introducing the Leather bag, the epitome of sophistication and style. Elevate your ensemble with this chic accessory that exudes luxury at every glance."
+        },
+        {
+            "image": "assets/images/handbag.png",
+            "name": "Ladies Bag",
+            "price": 25.0,
+            "description": "Elevate your ensemble with our Ladies Bag - a statement of elegance and functionality. Designed with attention to detail and crafted from premium materials, it's the perfect accessory for any occasion."
+        },
+        {
+            "image": "assets/images/Snicker.png",
+            "name": "Snicker",
+            "price": 30.0,
+            "description": "Unmatched Comfort: Say goodbye to discomfort and hello to blissful comfort with our ergonomic design . Featuring a cushioned insole and supportive arch, these shoes provide all-day comfort, allowing you to stay on your feet without a second thought."
+        },
+        {
+            "image": "assets/images/white_snicker.png",
+            "name": "White Snicker",
+            "price": 78.0,
+            "description": " Looking for the perfect gift for a loved one? Look no further! Our shoes make a thoughtful and stylish gift for birthdays, holidays, or any special occasion. Give the gift of style and comfort with our White Snicker."
+        },
+        {
+            "image": "assets/img/bag.png",
+            "name": "BackPack",
+            "price": 24.0,
+            "description": "Embark on your adventures with our Backpack - crafted for durability and style on the go. With ample storage and ergonomic design, it's the perfect companion for your daily commute or weekend getaway."
+        },
+        {
+            "image": "assets/img/foot.png",
+            "name": "Black Snicker",
+            "price": 27.99,
+            "description": "Step into urban chic with our Black Snicker - the epitome of street style and comfort. Designed for the modern trendsetter, these sneakers effortlessly blend versatility and edginess to elevate any look."
+        },
+        {
+            "image": "assets/img/glasses.png",
+            "name": "Reading Glasses",
+            "price": 16.59,
+            "description": "Enhance your reading experience with our Reading Glasses - precision-crafted for clarity and comfort. Whether delving into a novel or scrolling through documents, these glasses provide clear vision and effortless style."
+        },
+        {
+            "image": "assets/img/shirt1.png",
+            "name": "Men's Shirt",
+            "price": 34.19,
+            "description": "Discover the epitome of timeless style with our Men's Shirt - tailored to perfection for sophisticated versatility. Elevate your wardrobe with impeccable craftsmanship and premium fabrics, ensuring comfort and confidence in every wear."
+        },
+        {
+            "image": "assets/img/shirt2.png",
+            "name": "Official Shirt",
+            "price": 55.39,
+            "description": "Dress to impress with our Official Shirt - designed for professional elegance and confidence. Elevate your look with fine craftsmanship and impeccable tailoring, making a statement in any business setting."
+        },
+        {
+            "image": "assets/img/short.png",
+            "name": "Short",
+            "price": 12.49,
+            "description": "Step into style with our Black Short, the perfect blend of comfort and fashion for any occasion. Crafted with premium materials and tailored for a flattering fit, these shorts will become your wardrobe staple."
+        },
+        {
+            "image": "assets/img/slippers.png",
+            "name": "Home Slipppers",
+            "price": 4.99,
+            "description": "Introducing the Home Slipper - your cozy companions for lounging around the house. Slip into ultimate comfort with plush padding and a non-slip sole for added convenience."
+        },
+        {
+            "image": "assets/img/suitcase.png",
+            "name": "Brown Suitcase",
+            "price": 89.99,
+            "description": "Introducing the Brown Suitcase your stylish and reliable travel companion. Travel in sophistication with the sleek and timeless design of the Brown Suitcase."
+        },
+        {
+            "image": "assets/img/wallet.png",
+            "name": "Leather Wallet",
+            "price": 45.99,
+            "description": "Organize your cards and cash in impeccable style with the nice brown wallet.The Luxury Wallet features premium materials and exquisite craftsmanship for lasting durability."
+        },
+        {
+            "image": "assets/img/wallet1.png",
+            "name": "Black Wallet",
+            "price": 39.99,
+            "description": "Introducing our latest accessory essential, the Luxury Wallet, crafted for style and practicality. Elevate your everyday carry with the sleek and sophisticated design of the luxury black wallet."
+        }
+    ]
+}
