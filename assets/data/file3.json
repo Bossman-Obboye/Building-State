@@ -1,0 +1,8 @@
+{
+    "id": 1,
+    "name" : "square",
+    "property": {
+        "height": 5.0,
+        "width": 5.0
+    }
+}
