@@ -30,7 +30,7 @@ final List<Video> _listOfVideos = List.generate(
       title: 'Movie ${index+1}',
       duration: '${Random().nextInt(100) + 60} mins',
       description:
-          'Movie $index is ${_descriptions[Random().nextInt(_descriptions.length)]}'),
+        'Movie ${index + 1} is ${_descriptions[Random().nextInt(_descriptions.length)]}'),
 );
 
 class VideosSource with ChangeNotifier {

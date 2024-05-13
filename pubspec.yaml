@@ -28,3 +28,4 @@ flutter:
     - assets/data/file3.json
     - assets/data/file4.json
     - assets/data/file5.json
+    - lib/second_project/my_assets/
