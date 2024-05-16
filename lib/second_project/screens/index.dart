@@ -8,15 +8,23 @@ import 'package:building/second_project/state_managers/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class IndexScreen extends StatelessWidget {
+class IndexScreen extends StatefulWidget {
   const IndexScreen({super.key});
 
+  @override
+  State<IndexScreen> createState() => _IndexScreenState();
+}
+
+class _IndexScreenState extends State<IndexScreen> {
   final List<Widget> screens = const [
     HomeView(),
     FavoriteScreen(),
     CategoryScreen(),
     ProfileScreen(),
   ];
+ 
+
+
 
   @override
   Widget build(BuildContext context) {

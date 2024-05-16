@@ -26,6 +26,11 @@ List<Item> allItems = List.generate(
   ),
 );
 
+
+
+
+
+
 List<String> descriptions = [
   "Luxurious silk scarf, handcrafted with intricate patterns, adding a touch of sophistication to any outfit.",
   "Rugged DSLR camera backpack, weatherproofed and shock-resistant, featuring customizable dividers for organized storage and easy access to gear.",

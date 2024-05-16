@@ -1,6 +1,8 @@
 import 'package:building/second_project/components/colors.dart';
 import 'package:building/second_project/state_managers/item_model.dart';
+import 'package:building/second_project/state_managers/provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class DetailScreen extends StatefulWidget {
   const DetailScreen({
@@ -18,7 +20,7 @@ bool addToCartClicked = false;
 class _DetailScreenState extends State<DetailScreen> {
   @override
   Widget build(BuildContext context) {
-    // final provider = Provider.of<ItemProvider>(context, listen: false);
+    final myFavorites = context.watch<ItemProvider>().favorites;
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -30,10 +32,10 @@ class _DetailScreenState extends State<DetailScreen> {
           },
         ),
         backgroundColor: mainColor,
-        title: const Text('Details'),
+        title: const Text('Details Screen'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(size.width * 0.02),
+        padding: EdgeInsets.all(size.width * 0.022),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -54,9 +56,30 @@ class _DetailScreenState extends State<DetailScreen> {
             SizedBox(
               height: size.height * 0.02,
             ),
-            Text(
-              widget.item.name,
-              style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  widget.item.name,
+                  style: const TextStyle(
+                      fontSize: 25, fontWeight: FontWeight.bold),
+                ),
+                InkWell(
+                    onTap: () {
+                      if (!myFavorites.contains(widget.item)) {
+                        context.read<ItemProvider>().addToFavorite(widget.item);
+                      } else {
+                        context
+                            .read<ItemProvider>()
+                            .removeFromFavorite(widget.item);
+                      }
+                    },
+                    child: Icon(Icons.favorite,
+                        size: size.width * 0.11,
+                        color: myFavorites.contains(widget.item)
+                            ? callToAction
+                            : minorColor))
+              ],
             ),
             Text(
               widget.item.price.toStringAsFixed(2),
