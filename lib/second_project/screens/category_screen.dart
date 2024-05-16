@@ -113,7 +113,7 @@ class CategoryScreen extends StatelessWidget {
                 context: context,
                 builder: (context) => BottomSheet(
                   onClosing: () {},
-                  backgroundColor: mainColor,
+                  backgroundColor: midColor,
                   builder: (context) => Container(
                     padding: EdgeInsets.only(
                       left: size(context).height * 0.02,

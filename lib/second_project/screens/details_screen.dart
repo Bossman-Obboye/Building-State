@@ -1,5 +1,5 @@
 import 'package:building/second_project/components/colors.dart';
-import 'package:building/second_project/state_managers/item_model.dart';
+import 'package:building/second_project/components/mapper.dart';
 import 'package:building/second_project/state_managers/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -7,9 +7,9 @@ import 'package:provider/provider.dart';
 class DetailScreen extends StatefulWidget {
   const DetailScreen({
     super.key,
-    required this.item,
+    required this.currentProduct,
   });
-  final Item item;
+  final Products currentProduct;
 
   @override
   State<DetailScreen> createState() => _DetailScreenState();
@@ -20,8 +20,7 @@ bool addToCartClicked = false;
 class _DetailScreenState extends State<DetailScreen> {
   @override
   Widget build(BuildContext context) {
-    final myFavorites = context.watch<ItemProvider>().favorites;
-    final Size size = MediaQuery.of(context).size;
+    final myFavorites = context.watch<ItemProvider>().favoriteProducts;
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -35,60 +34,69 @@ class _DetailScreenState extends State<DetailScreen> {
         title: const Text('Details Screen'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(size.width * 0.022),
+        padding: EdgeInsets.all(size(context).width * 0.022),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              height: size.height * 0.4,
-              color: widget.item.color,
+            SizedBox(
+              height: size(context).height * 0.4,
               child: Center(
-                child: Text(
-                  widget.item.name,
-                  style: const TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
-                    color: white,
+                child: Container(
+                  color: mainColor,
+                  child: Center(
+                    child: Image.network(
+                      formatImage(widget.currentProduct.images[0]),
+                      fit: BoxFit.contain,
+                      errorBuilder: (context, error, stackTrace) => const Image(
+                        image: AssetImage(
+                            'lib/second_project/my_assets/error.png'),
+                      ),
+                    ),
                   ),
                 ),
               ),
             ),
             SizedBox(
-              height: size.height * 0.02,
+              height: size(context).height * 0.02,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  widget.item.name,
-                  style: const TextStyle(
-                      fontSize: 25, fontWeight: FontWeight.bold),
+                SizedBox(
+                  width: size(context).width * 0.8,
+                  child: Text(
+                    widget.currentProduct.title,
+                    style: const TextStyle(
+                        fontSize: 23, fontWeight: FontWeight.bold),
+                  ),
                 ),
                 InkWell(
                     onTap: () {
-                      if (!myFavorites.contains(widget.item)) {
-                        context.read<ItemProvider>().addToFavorite(widget.item);
+                      if (!myFavorites.contains(widget.currentProduct)) {
+                        context
+                            .read<ItemProvider>()
+                            .addToFavoriteProducts(widget.currentProduct);
                       } else {
                         context
                             .read<ItemProvider>()
-                            .removeFromFavorite(widget.item);
+                            .removeFromFavoriteProducts(widget.currentProduct);
                       }
                     },
                     child: Icon(Icons.favorite,
-                        size: size.width * 0.11,
-                        color: myFavorites.contains(widget.item)
+                        size: size(context).width * 0.11,
+                        color: myFavorites.contains(widget.currentProduct)
                             ? callToAction
                             : minorColor))
               ],
             ),
             Text(
-              widget.item.price.toStringAsFixed(2),
+              widget.currentProduct.price.toStringAsFixed(2),
               style:
-                  const TextStyle(fontSize: 25, fontWeight: FontWeight.normal),
+                  const TextStyle(fontSize: 23, fontWeight: FontWeight.normal),
             ),
             Text(
-              widget.item.description ?? 'No Information',
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              widget.currentProduct.description,
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             const Spacer(),
             Visibility(
@@ -101,7 +109,7 @@ class _DetailScreenState extends State<DetailScreen> {
                       const AssetImage(
                         "lib/second_project/my_assets/minus.png",
                       ),
-                      size: size.width * 0.14,
+                      size: size(context).width * 0.14,
                       color: callToAction,
                     ),
                     const Padding(
@@ -118,7 +126,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         const AssetImage(
                           "lib/second_project/my_assets/addition.png",
                         ),
-                        size: size.width * 0.12,
+                        size: size(context).width * 0.12,
                         color: callToAction,
                       ),
                     ),
@@ -145,8 +153,8 @@ class _DetailScreenState extends State<DetailScreen> {
                     },
                     child: const Text(
                       "Add to cart",
-                      style:
-                          TextStyle(color: white, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          color: callToAction, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ],
@@ -157,4 +165,11 @@ class _DetailScreenState extends State<DetailScreen> {
       ),
     );
   }
+}
+
+formatImage(String url) {
+  if (!url.characters.first.contains(RegExp(r'[a-z]'))) {
+    return url.substring(2, url.length - 1);
+  }
+  return url;
 }

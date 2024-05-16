@@ -29,7 +29,7 @@ class _IndexScreenState extends State<IndexScreen> {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    final myFavorites = context.watch<ItemProvider>().favorites;
+    final myFavorites = context.watch<ItemProvider>().favoriteProducts;
     final int currentPage = context.watch<ItemProvider>().currentPage;
     return Scaffold(
       appBar: AppBar(

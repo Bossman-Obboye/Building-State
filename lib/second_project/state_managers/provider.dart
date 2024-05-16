@@ -18,6 +18,7 @@ class ItemProvider with ChangeNotifier {
   final List<Item> _favorites = [];
   List<Item> get favorites => _favorites;
 
+// Fetching data from API
   final String _apiUrl = 'https://api.escuelajs.co/api/v1/products';
   Dio dio = Dio();
   Future<List<Products>> getData() async {
@@ -35,6 +36,37 @@ class ItemProvider with ChangeNotifier {
     return [];
   }
 
+  final List<Products> _favoriteProducts = [];
+  List<Products> get favoriteProducts => _favoriteProducts;
+
+  addToFavoriteProducts(Products product) {
+    _favoriteProducts.add(product);
+    notifyListeners();
+  }
+
+  removeFromFavoriteProducts(Products product) {
+    _favoriteProducts.remove(product);
+    notifyListeners();
+  }
+
+  // List<Item> funcToFilterProductsByPrice(double initialValue, double finalValue) {
+  //   List<Item> filteredList = allItems
+  //       .where((eachItem) =>
+  //           eachItem.price >= initialValue && eachItem.price <= finalValue)
+  //       .toList();
+  //   return filteredList;
+  // }
+
+  // List<Item> funcToFilterProductsByName(double initialValue, double finalValue) {
+  //   List<{Products}> filteredList = allProducts
+  //       .where((eachItem) =>
+  //           int.parse(eachItem.name.substring(5, eachItem.name.length)) >=
+  //               initialValue &&
+  //           int.parse(eachItem.name.substring(5, eachItem.name.length)) <=
+  //               finalValue)
+  //       .toList();
+  //   return filteredList;
+  // }
   Future<List<Products>> get allProducts => getData();
 
   addToCart(Item item) {

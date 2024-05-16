@@ -53,14 +53,14 @@ class GridViewBuilder extends StatelessWidget {
             ),
           ),
           child: GestureDetector(
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => DetailScreen(
-                  item: currentItem,
-                ),
-              ),
-            ),
+            // onTap: () => Navigator.push(
+            //   context,
+            //   MaterialPageRoute(
+            //     builder: (context) => DetailScreen(
+            //       item: currentItem,
+            //     ),
+            //   ),
+            // ),
             child: Container(
               color: currentItem.color ?? minorColor,
               child: Center(
