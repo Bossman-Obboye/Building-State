@@ -1,7 +1,5 @@
 import 'package:building/second_project/components/colors.dart';
 import 'package:building/second_project/components/mapper.dart';
-import 'package:building/second_project/screens/details_screen.dart';
-
 import 'package:building/second_project/state_managers/provider.dart';
 import 'package:building/second_project/widgets/if__empty_notice_card.dart';
 import 'package:building/second_project/widgets/product_grid_view_builder.dart';
@@ -34,15 +32,16 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
         backgroundColor: midColor,
         body: products.isEmpty
-            ? const If_EmptyNoticeCard(
-                navigateToHome: false,
-                // this is defined arrangement of text, pls don't alter anything
-                message: '''Seems like we dont have any 
+            ? const Center(
+              child: If_EmptyNoticeCard(
+                  navigateToHome: false,
+                  // this is defined arrangement of text, pls don't alter anything
+                  message: '''Seems like we dont have any 
             thing here yet.
-          Please visit us later!''',
-              )
+                      Please wait for a while!''',
+                ),
+            )
             : ProductGridViewBuilder(products: products));
   }
 }
-
 

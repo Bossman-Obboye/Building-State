@@ -17,6 +17,7 @@ class IndexScreen extends StatefulWidget {
 
 class _IndexScreenState extends State<IndexScreen> {
   final List<Widget> screens = const [
+    // Testing
     HomeView(),
     FavoriteScreen(),
     CategoryScreen(),

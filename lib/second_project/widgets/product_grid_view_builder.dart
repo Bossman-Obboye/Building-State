@@ -1,7 +1,6 @@
 import 'package:building/second_project/components/colors.dart';
 import 'package:building/second_project/components/mapper.dart';
 import 'package:building/second_project/screens/details_screen.dart';
-import 'package:building/second_project/screens/home_screen.dart';
 import 'package:building/second_project/state_managers/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
